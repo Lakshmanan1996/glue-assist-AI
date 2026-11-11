@@ -1,0 +1,38 @@
+from fastapi import FastAPI
+
+from backend.app.core.secrets_manager import get_secret
+
+from contextlib import asynccontextmanager
+
+#Add Secret Manager startup integration
+
+@asynccontextmanager
+async def lifespan(app:FastAPI):
+    app.state.anthropic_api_key=get_secret("anthrophic-api-key")
+    print("Anthropic API Key loaded successfully")
+    yield
+
+
+
+# Create FastAPI application
+app = FastAPI(
+    title="Glue Assist AI",
+    description="NOC Knowledge Assistant API",
+    version="1.0.0",
+    lifespan=lifespan
+)
+
+# First API endpoint
+@app.get("/")
+def home():
+    return {
+        "message": "Welcome to Glue Assist AI"
+    }
+
+# Health check endpoint
+@app.get("/health")
+def health():
+    return {
+        "status": "healthy",
+        "application": "Glue Assist AI"
+    }
