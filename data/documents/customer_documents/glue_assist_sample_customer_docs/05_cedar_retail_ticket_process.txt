@@ -1,0 +1,58 @@
+CUSTOMER SOP - CEDAR RETAIL Document: Store and Head Office Alert
+Process Environment: LAB SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+1.  PURPOSE Defines NOC handling for store systems, point-of-sale
+    support infrastructure, and head office services.
+
+2.  SEVERITY Critical:
+
+-   Multiple stores unable to process transactions, central retail
+    platform outage, or major WAN outage.
+-   Begin triage and contact the escalation chain.
+-   Do not make changes to payment systems or transaction data.
+
+High: - Single-store server, network, or shared service outage. -
+Investigate and determine store impact. - If a store employee must check
+cabling or power, set “Escalated to Customer” and explain the required
+action.
+
+3.  CONTACT ESCALATION Fictional lab contacts:
+
+4.  Retail Service Desk - +1-555-0501 - retaildesk@cedar-retail.example
+
+5.  Regional IT Manager - +1-555-0502 - regionalit@cedar-retail.example
+
+6.  Head Office Duty Contact - +1-555-0503 - duty@cedar-retail.example
+    For Critical multi-store impact, call twice at each level. For a
+    single-store issue, contact the service desk first.
+
+7.  AVAILABILITY
+
+-   Transaction platform and multi-store outages: 24x7.
+-   Store endpoint issues: store operating hours.
+-   Head office user issues: weekdays, 09:00-17:00.
+
+5.  REMOTE REMEDIATION
+
+-   Read-only monitoring is allowed.
+-   Store server remediation is allowed only within the approved action
+    list.
+-   Payment terminals and payment applications must not be remotely
+    modified by the NOC.
+
+6.  REBOOT
+
+-   Obtain approval before rebooting a store server during trading
+    hours.
+-   Outside trading hours, verify the approved maintenance window before
+    proceeding.
+-   Never reboot payment infrastructure without explicit authorization.
+
+7.  MAINTENANCE EXCEPTIONS
+
+-   Check store-specific maintenance schedule.
+-   Confirm store number, device name, time zone, and end time.
+-   An exception for one store does not apply to other stores.
+
+8.  TICKET DOCUMENTATION Include store ID, business impact, device,
+    timestamps, tests, approvals, customer instructions, and resolution.

@@ -1,0 +1,62 @@
+CUSTOMER SOP - REDWOOD LEGAL SERVICES Document: IT Alert and Escalation
+Procedure Environment: LAB SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+1.  PURPOSE Provides the NOC workflow for infrastructure and endpoint
+    alerts.
+
+2.  SEVERITY HANDLING Critical:
+
+-   Firm-wide connectivity outage, file service outage, or
+    security-related infrastructure outage.
+-   Contact the escalation chain immediately.
+-   Preserve relevant logs and evidence.
+-   Do not delete files, disable accounts, or alter security controls
+    without authorization.
+
+High: - Investigate affected servers and services. - If additional
+information is needed, add a public note and set “Info Needed by NOC”. -
+If local hands or user action is required, set “Escalated to Customer”.
+
+3.  CONTACT ORDER Fictional lab contacts:
+
+4.  IT Support Desk - +1-555-0401 - support@redwood-legal.example
+
+5.  IT Director - +1-555-0402 - director.it@redwood-legal.example
+
+6.  Managing Partner Delegate - +1-555-0403 -
+    delegate@redwood-legal.example Call twice at each level for Critical
+    incidents. Use the approved customer contact channel and document
+    attempts.
+
+7.  CONTACT AVAILABILITY
+
+-   Critical server or firm-wide incidents: 24x7.
+-   User workstation issues: weekdays, 08:30-17:30.
+-   Do not contact individual partners directly unless the escalation
+    list instructs it.
+
+5.  REMOTE REMEDIATION
+
+-   Monitoring and read-only diagnostics are allowed.
+-   Obtain approval before modifying document-management systems, access
+    permissions, or security policies.
+-   Treat client matter data as confidential; do not copy it into ticket
+    notes.
+
+6.  REBOOT POLICY
+
+-   Obtain approval before rebooting shared servers or
+    document-management services.
+-   For user devices, coordinate with the user.
+-   If approval is not received within 15 minutes during a Critical
+    incident, escalate; do not infer approval.
+
+7.  MAINTENANCE
+
+-   Validate maintenance windows against the approved change record.
+-   Record the change ID and the assets in scope.
+-   Alerts outside the approved scope follow normal handling.
+
+8.  DOCUMENTATION Record minimum necessary technical details, evidence,
+    approval, actions, contact attempts, and status. Never paste
+    confidential client documents into tickets.

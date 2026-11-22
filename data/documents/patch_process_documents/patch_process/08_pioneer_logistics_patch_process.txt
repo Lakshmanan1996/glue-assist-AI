@@ -1,0 +1,34 @@
+CSOP - PP - PATCH PROCESS - PIONEER LOGISTICS Environment: LAB SAMPLE
+ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW These instructions define patching and reboot procedures for
+Pioneer Logistics warehouses and offices. Warehouse shift schedules must
+be checked before maintenance.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Sunday Time: 1:00 AM - 5:00 AM Local Warehouse Time
+
+Patch Remediation Install approved patches during the maintenance
+window. Confirm warehouse code and local time zone.
+
+Reboot Policy Warehouse infrastructure servers require customer approval
+before reboot. Central dispatch servers must be covered by an approved
+change and an agreed operational window.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Sunday Time: 12:00 AM - 6:00 AM Local Warehouse Time
+
+Reboot Policy Office workstations may be configured for automated reboot
+at 5:00 AM Sunday. Warehouse handhelds, scanners, and shift-critical
+terminals must be coordinated with the warehouse supervisor.
+
+PATCHING EXCEPTIONS Peak Dispatch Period Devices listed on the approved
+peak-period exception register must not be rebooted during the stated
+dispatch period. Confirm the exception expiry before deferring
+maintenance.
+
+OPERATIONAL REQUIREMENTS 1. Confirm warehouse code, shift, and time
+zone. 2. Check the peak dispatch exception register. 3. Verify the
+approved patch window. 4. Obtain approval for shared server reboots. 5.
+Verify patch and service status. 6. Record failed patches and reboot
+issues. 7. Escalate through the Pioneer Logistics Ticket Process.

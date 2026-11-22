@@ -1,0 +1,62 @@
+CUSTOMER SOP - WESTBRIDGE PROPERTY GROUP Document: Property IT and
+Building Systems Alert Process Environment: LAB SAMPLE ONLY - FICTIONAL
+CUSTOMER Version: 1.0
+
+1.  PURPOSE Defines NOC handling for office IT and property-site
+    infrastructure alerts.
+
+2.  SEVERITY HANDLING Critical:
+
+-   Multiple property sites offline, central network outage, or a
+    critical shared business service unavailable.
+-   Contact escalation contacts immediately.
+-   If a physical site visit or power/cabling check is required, set
+    “Escalated to Customer”.
+
+High: - Single property server or network device unavailable. - Confirm
+whether the issue affects tenants, staff, or building operations. - If
+information is missing, add a public note and set “Info Needed by NOC”.
+
+3.  ESCALATION CONTACTS Fictional lab contacts:
+
+4.  Property IT Service Desk - +1-555-1001 -
+    servicedesk@westbridge-property.example
+
+5.  Regional Facilities IT - +1-555-1002 -
+    facilitiesit@westbridge-property.example
+
+6.  Corporate Infrastructure Lead - +1-555-1003 -
+    infra-lead@westbridge-property.example For Critical incidents, call
+    each contact up to two times before moving to the next.
+
+7.  CONTACT AVAILABILITY
+
+-   Central network and multi-site outages: 24x7.
+-   Single-site non-critical issues: weekdays, 08:00-17:00.
+-   Building access or safety systems must be referred to the customer’s
+    designated facilities team.
+
+5.  REMOTE REMEDIATION
+
+-   Monitoring and read-only diagnostics are permitted.
+-   Do not modify building access, CCTV, fire, lift, or other
+    life-safety systems.
+-   Server and network changes require customer authorization.
+
+6.  REBOOT APPROVAL
+
+-   Obtain approval before restarting shared property services.
+-   For network devices, confirm site impact and approved change window.
+-   If approval is not received, escalate and leave the device
+    unchanged.
+
+7.  MAINTENANCE EXCEPTIONS
+
+-   Check the property maintenance register.
+-   Confirm site, asset, approver, and expiry date.
+-   Do not treat safety-system alerts as covered by a general IT
+    maintenance exception.
+
+8.  TICKET DOCUMENTATION Record property/site, affected service,
+    business impact, diagnostics, customer approvals, escalation
+    attempts, and ticket status.

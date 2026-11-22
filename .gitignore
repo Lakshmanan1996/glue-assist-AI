@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# SSH and shell history
+.ssh/
+.bash_history*
+.gitconfig
+.lesshst
+.vim/
+.viminfo
+
+# Cache and temporary files
+.cache/
+*.tmp
+*.log
+
+# Local model and vector database data
+ollama/
+qdrant_storage/

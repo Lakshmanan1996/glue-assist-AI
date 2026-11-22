@@ -1,0 +1,39 @@
+CSOP - PP - PATCH PROCESS - BLUEPEAK HEALTHCARE Environment: LAB SAMPLE
+ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW This procedure defines approved patching and reboot
+requirements for BluePeak Healthcare managed infrastructure. All
+patching must follow the maintenance windows below. Clinical systems
+have additional approval requirements.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Monthly Day: Second Sunday of each month Time: 12:00 AM - 4:00 AM
+Eastern Time
+
+Patch Remediation Install approved updates during the monthly window.
+Validate service health after patching and record any failed updates.
+
+Reboot Policy Infrastructure servers may be rebooted during the approved
+window when included in the approved change. Clinical application
+servers and identity services require explicit customer approval before
+reboot.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Sunday Time: 1:00 AM - 5:00 AM Eastern Time
+
+Reboot Policy Standard administrative workstations may be configured for
+automated reboot at 4:00 AM Sunday. Shared clinical workstations must
+not be rebooted while in active use. Coordinate with the customer
+contact.
+
+PATCHING EXCEPTIONS Clinical Systems Clinical application servers,
+patient-care systems, and designated shared clinical workstations are
+excluded from automatic patching and reboot under this general policy.
+Use a separately approved change window.
+
+OPERATIONAL REQUIREMENTS 1. Confirm the device’s patch classification.
+2. Validate the approved window and change record. 3. Do not reboot
+clinical systems without explicit approval. 4. Verify patch completion
+and service health. 5. Document failed installations and reboot issues.
+6. Escalate according to the BluePeak Ticket Process. 7. Do not include
+patient information in ticket notes.

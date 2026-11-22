@@ -1,0 +1,37 @@
+CSOP - PP - PATCH PROCESS - SUMMIT EDUCATION GROUP Environment: LAB
+SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW These instructions define patching and reboot schedules for
+Summit Education Group. The school term calendar must be checked before
+carrying out maintenance.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Monthly Day: First Sunday of each month Time: 12:00 AM - 5:00 AM Pacific
+Time
+
+Patch Remediation Apply approved patches during the maintenance window.
+Confirm server health and application availability after updates.
+
+Reboot Policy Approved infrastructure servers may be rebooted during the
+monthly window. School management and learning-platform servers require
+approval if the reboot falls during an active school event or
+examination period.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Sunday Time: 12:00 AM - 6:00 AM Pacific Time
+
+Reboot Policy Standard staff workstations may be configured for
+automated reboot at 5:00 AM Sunday. Classroom and examination-room
+devices must follow the school calendar and must not be rebooted during
+scheduled examinations or teaching activities.
+
+PATCHING EXCEPTIONS Examination Period Devices listed on the approved
+examination exception register must not be rebooted during the
+registered period. The exception must include device/site, start date,
+end date, and approver.
+
+OPERATIONAL REQUIREMENTS 1. Check the school term and examination
+calendar. 2. Confirm the asset is included in the patch group. 3. Patch
+only during the approved window. 4. Reboot according to the applicable
+device policy. 5. Validate installation and reboot results. 6. Record
+failures and escalate using the Ticket Process.

@@ -1,0 +1,64 @@
+CUSTOMER SOP - PIONEER LOGISTICS Document: Warehouse and Logistics IT
+Alert Process Environment: LAB SAMPLE ONLY - FICTIONAL CUSTOMER Version:
+1.0
+
+1.  PURPOSE Defines NOC alert handling for warehouse, dispatch, and
+    central IT services.
+
+2.  SEVERITY Critical:
+
+-   Warehouse-wide connectivity outage, dispatch platform outage, or
+    core server failure affecting shipments.
+-   Contact escalation contacts immediately.
+-   Determine affected warehouse locations and operational impact.
+
+High: - Single warehouse service degradation or shared device/server
+issue. - If onsite checks are needed, add a public note and set
+“Escalated to Customer”. - If more information is needed, set “Info
+Needed by NOC”.
+
+3.  ESCALATION ORDER Fictional lab contacts:
+
+4.  24x7 Operations Desk - +1-555-0801 -
+    opsdesk@pioneer-logistics.example
+
+5.  Regional IT Coordinator - +1-555-0802 -
+    regionalit@pioneer-logistics.example
+
+6.  Infrastructure Manager - +1-555-0803 -
+    infrastructure@pioneer-logistics.example Call each contact up to two
+    times for Critical incidents. Include warehouse code in every
+    communication.
+
+7.  AVAILABILITY
+
+-   Dispatch and warehouse-wide incidents: 24x7.
+-   Office user incidents: weekdays, 08:00-17:00.
+-   Warehouse handheld or scanner incidents: contact the operations desk
+    during the affected shift.
+
+5.  REMOTE REMEDIATION
+
+-   Monitoring and read-only diagnostics are permitted.
+-   Do not restart warehouse controllers or dispatch services without
+    approval.
+-   Coordinate endpoint actions with the warehouse supervisor to avoid
+    disrupting active shifts.
+
+6.  REBOOT
+
+-   Shared warehouse servers require approval.
+-   Confirm active dispatch/warehouse operations before rebooting.
+-   Wait up to 15 minutes for approval during a Critical incident, then
+    escalate. No automatic reboot is permitted.
+
+7.  MAINTENANCE EXCEPTIONS
+
+-   Maintenance is site-specific.
+-   Confirm warehouse code, asset, time zone, and approved window.
+-   Check whether the maintenance is still active before suppressing
+    escalation.
+
+8.  TICKET DOCUMENTATION Record warehouse code, operational impact,
+    device, shift, tests, approvals, escalation attempts, and
+    resolution.

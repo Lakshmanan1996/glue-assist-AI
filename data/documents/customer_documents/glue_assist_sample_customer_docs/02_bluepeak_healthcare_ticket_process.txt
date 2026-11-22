@@ -1,0 +1,66 @@
+CUSTOMER SOP - BLUEPEAK HEALTHCARE Document: Monitoring Alert and Ticket
+Process Environment: LAB SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+1.  PURPOSE This procedure covers NOC handling of infrastructure alerts
+    for BluePeak Healthcare.
+
+2.  SEVERITY AND RESPONSE Critical:
+
+-   Critical includes a site outage, core identity service outage, or
+    outage affecting clinical systems.
+-   Notify the customer escalation contacts immediately.
+-   Do not make changes to clinical applications or patient-care systems
+    without explicit authorization.
+-   If information is missing, add a public note and set “Info Needed by
+    NOC”.
+-   If onsite or customer action is needed, add a public note and set
+    “Escalated to Customer”.
+
+High: - Investigate infrastructure symptoms and collect logs. - Escalate
+if the issue affects clinical operations or multiple departments. - For
+non-urgent issues, continue during the approved support window.
+
+3.  CONTACT ESCALATION Fictional lab contacts:
+
+4.  IT Service Desk - +1-555-0201 - servicedesk@bluepeak.example
+
+5.  Infrastructure Lead - +1-555-0202 - infra@bluepeak.example
+
+6.  On-call Administrator - +1-555-0203 - oncall@bluepeak.example For
+    Critical incidents, call twice at each level before moving to the
+    next. Document timestamps and outcomes.
+
+7.  AVAILABILITY
+
+-   Critical infrastructure incidents: 24x7.
+-   Non-critical workstation incidents: Monday-Friday, 08:00-18:00
+    customer local time.
+-   Contact clinical department staff only through the designated IT
+    contact.
+
+5.  REMOTE REMEDIATION
+
+-   Read-only diagnostics and monitoring are permitted 24x7.
+-   Changes to clinical systems, identity services, or shared clinical
+    workstations require approval.
+-   Do not interrupt active clinical sessions.
+
+6.  REBOOT POLICY
+
+-   Reboots of clinical application servers require explicit approval.
+-   For other servers, document impact and request approval according to
+    the change process.
+-   Wait up to 20 minutes for a response, then escalate to the next
+    contact. No automatic reboot is authorized.
+
+7.  MAINTENANCE
+
+-   Planned maintenance must be confirmed against the customer change
+    calendar.
+-   Record the change reference and approved start/end times.
+-   An alert during an approved window must still be checked against the
+    maintenance scope.
+
+8.  DOCUMENTATION Record diagnostic evidence, affected service, customer
+    approval, communication, escalation, and outcome. Do not include
+    patient information in ticket notes.

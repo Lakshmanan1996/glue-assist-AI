@@ -1,0 +1,37 @@
+CSOP - PP - PATCH PROCESS - OCEANVIEW HOSPITALITY Environment: LAB
+SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW This procedure defines patching and reboot schedules for
+Oceanview Hospitality properties and central services. Property events
+and occupancy-related operational requirements must be checked before
+maintenance.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Monthly Day: First Monday of each month Time: 1:00 AM - 5:00 AM Local
+Property Time
+
+Patch Remediation Apply approved patches during the property maintenance
+window. Confirm property-specific time zone and check the event
+calendar.
+
+Reboot Policy Property infrastructure servers may be rebooted only when
+the approved window and property schedule permit. Reservation and
+guest-service platform servers require explicit customer approval.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Monday Time: 2:00 AM - 5:00 AM Local Property Time
+
+Reboot Policy Back-office workstations may be configured for automated
+reboot at 4:00 AM Monday. Front-desk and guest-service workstations must
+not be rebooted during active shifts.
+
+PATCHING EXCEPTIONS Major Events The customer may register a property or
+device exception during conferences or major events. The exception must
+include property, device, approved period, and approver. Do not assume
+the exception applies to all properties.
+
+OPERATIONAL REQUIREMENTS 1. Check the property event calendar. 2.
+Confirm local property time and device scope. 3. Patch only during the
+approved window. 4. Coordinate reboot of front-desk systems. 5. Verify
+service health after patching. 6. Document failures and escalate through
+the Oceanview Ticket Process.

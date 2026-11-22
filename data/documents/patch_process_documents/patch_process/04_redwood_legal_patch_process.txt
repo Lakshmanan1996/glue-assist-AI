@@ -1,0 +1,38 @@
+CSOP - PP - PATCH PROCESS - REDWOOD LEGAL SERVICES Environment: LAB
+SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW This document defines the approved patch and reboot process for
+Redwood Legal Services. Production changes must be traceable to an
+approved maintenance or change record.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Monthly Day: Third Saturday of each month Time: 11:00 PM - 4:00 AM
+Eastern Time
+
+Patch Remediation Install approved operating-system and security updates
+within the window. Record update results and any outstanding failures.
+
+Reboot Policy Shared file, document-management, and authentication
+servers require explicit approval before reboot. Other infrastructure
+servers may be rebooted only when the approved change record includes
+the reboot.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Saturday Time: 11:00 PM - 5:00 AM Eastern Time
+
+Reboot Policy Standard workstations may be configured for automated
+reboot at 4:30 AM Sunday. Devices assigned to active legal proceedings
+or scheduled business-critical work must be coordinated with the user or
+customer IT contact.
+
+PATCHING EXCEPTIONS Document Management Services Do not reboot
+document-management servers or shared storage outside an approved
+change. Confirm the service owner and change reference before
+proceeding.
+
+OPERATIONAL REQUIREMENTS 1. Verify the approved change and maintenance
+window. 2. Confirm affected assets and service owners. 3. Obtain
+required reboot approval. 4. Verify patch status and service
+availability. 5. Document failures and all approvals. 6. Escalate
+through the Redwood Ticket Process. 7. Do not place confidential client
+content in ticket notes.

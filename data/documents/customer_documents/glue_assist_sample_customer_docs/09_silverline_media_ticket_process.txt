@@ -1,0 +1,61 @@
+CUSTOMER SOP - SILVERLINE MEDIA Document: Media Production IT Ticket
+Process Environment: LAB SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+1.  PURPOSE Defines NOC handling for media production infrastructure,
+    storage, and office IT alerts.
+
+2.  SEVERITY Critical:
+
+-   Shared production storage unavailable, studio network outage, or
+    service outage blocking a live production.
+-   Escalate immediately.
+-   Do not delete, move, or alter production media files during
+    troubleshooting.
+
+High: - Storage capacity warning, server degradation, or production
+workstation issue. - Collect utilization and health evidence. - If
+additional capacity or project details are required, set “Info Needed by
+NOC”. - If hands-on action is needed, set “Escalated to Customer”.
+
+3.  CONTACT ESCALATION Fictional lab contacts:
+
+4.  Media IT Helpdesk - +1-555-0901 - helpdesk@silverline-media.example
+
+5.  Production Systems Lead - +1-555-0902 -
+    systems@silverline-media.example
+
+6.  Technical Operations Director - +1-555-0903 -
+    techops@silverline-media.example For live-production Critical
+    incidents, call twice at each level. State whether a live production
+    is affected.
+
+7.  CONTACT AVAILABILITY
+
+-   Live production and shared storage Critical incidents: 24x7.
+-   Standard office issues: weekdays, 09:00-18:00.
+-   Production workstation changes must be coordinated with the assigned
+    operator.
+
+5.  REMOTE REMEDIATION
+
+-   Read-only storage and server checks are permitted.
+-   Do not delete files, alter media permissions, or restart shared
+    storage without approval.
+-   Avoid disrupting active editing or rendering sessions.
+
+6.  REBOOT POLICY
+
+-   Shared storage and production servers require explicit approval.
+-   For workstations, confirm the operator has saved work and agreed to
+    the restart.
+-   Record the approval and expected impact.
+
+7.  MAINTENANCE
+
+-   Confirm the production schedule before maintenance.
+-   Record approved assets and start/end times.
+-   A maintenance window does not authorize unrelated changes.
+
+8.  DOCUMENTATION Record affected production service, storage/host
+    details, utilization evidence, operator coordination, approval, and
+    outcome. Do not attach confidential media.

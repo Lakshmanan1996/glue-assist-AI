@@ -1,0 +1,35 @@
+CSOP - PP - PATCH PROCESS - CEDAR RETAIL Environment: LAB SAMPLE ONLY -
+FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW These instructions define patching and reboot schedules for
+Cedar Retail stores and head office. Store trading hours and
+store-specific maintenance schedules must be considered.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Sunday Time: 12:00 AM - 4:00 AM Local Store Time
+
+Patch Remediation Install approved patches during each store’s
+maintenance window. Confirm the store identifier and local time zone
+before scheduling.
+
+Reboot Policy Store infrastructure servers may be rebooted only within
+the approved store window and when the store is not trading, unless an
+approved exception exists. Central retail platform servers require an
+approved change and explicit reboot authorization.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Sunday Time: 1:00 AM - 5:00 AM Local Store Time
+
+Reboot Policy Office workstations may be configured for automated reboot
+at 4:00 AM Sunday. Point-of-sale terminals and payment devices must not
+be rebooted under the general workstation schedule.
+
+PATCHING EXCEPTIONS Point-of-Sale and Payment Devices These devices are
+excluded from general automated patching and reboot. Follow the separate
+payment-system maintenance procedure and obtain customer approval.
+
+OPERATIONAL REQUIREMENTS 1. Confirm store ID and local time zone. 2.
+Check the store trading schedule. 3. Verify device patch group and
+approved window. 4. Do not reboot payment devices under this policy. 5.
+Confirm patch installation and device health. 6. Document failures and
+escalate through the Cedar Retail Ticket Process.

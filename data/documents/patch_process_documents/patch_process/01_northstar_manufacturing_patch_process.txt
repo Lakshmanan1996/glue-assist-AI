@@ -1,0 +1,40 @@
+CSOP - PP - PATCH PROCESS - NORTHSTAR MANUFACTURING Environment: LAB
+SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW These instructions define approved patching, remediation, and
+reboot procedures for managed Northstar Manufacturing devices. Patch
+activities must occur only during approved maintenance windows unless an
+authorized exception is documented.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Saturday Time: 12:00 AM - 6:00 AM Central Time
+
+Patch Remediation Install approved operating-system and security updates
+during the maintenance window. Review failed updates and record the
+affected server and error details.
+
+Reboot Policy Production application servers require approval before
+reboot. Infrastructure servers may be rebooted during the approved
+window when covered by the approved maintenance plan. Do not reboot
+manufacturing control or production-line systems under this general
+policy.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Saturday Time: 1:00 AM - 5:00 AM Central Time
+
+Reboot Policy Standard office workstations may be configured for
+automated reboot at 4:00 AM Saturday. Coordinate exceptions for devices
+used by overnight operations.
+
+PATCHING EXCEPTIONS Production Control Systems Do not install patches or
+reboot production control systems under the standard schedule. These
+devices require a separate approved change and maintenance window from
+the customer’s operations team.
+
+OPERATIONAL REQUIREMENTS 1. Confirm the device belongs to the applicable
+patch group. 2. Verify the approved maintenance window and time zone. 3.
+Confirm patch installation results. 4. Reboot only according to the
+applicable device policy and approval. 5. Record failed patches, reboot
+failures, and exceptions. 6. Escalate patch-related issues using the
+customer’s Ticket Process. 7. Maintain ticket notes for all patching
+activities.

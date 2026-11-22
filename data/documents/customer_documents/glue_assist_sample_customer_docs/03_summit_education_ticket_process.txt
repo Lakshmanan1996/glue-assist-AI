@@ -1,0 +1,64 @@
+CUSTOMER SOP - SUMMIT EDUCATION GROUP Document: Datto RMM Ticket
+Handling Environment: LAB SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+1.  PURPOSE Defines the NOC process for school and administrative IT
+    alerts.
+
+2.  ALERT CLASSIFICATION Critical:
+
+-   Multiple school sites offline, core network outage, or
+    authentication outage affecting broad access.
+-   Notify the escalation contacts immediately.
+-   If customer action is required, set status to “Escalated to
+    Customer” with a clear public note.
+
+High: - A single site server or important shared service is degraded. -
+Investigate and update the ticket. - If blocked by missing details, set
+status to “Info Needed by NOC”.
+
+Medium/Low: - Queue for normal business-hours handling unless impact
+increases.
+
+3.  ESCALATION CONTACTS Fictional lab contacts:
+
+4.  Helpdesk Coordinator - +1-555-0301 - helpdesk@summit-edu.example
+
+5.  IT Operations Manager - +1-555-0302 - itops@summit-edu.example
+
+6.  District Technology Lead - +1-555-0303 - techlead@summit-edu.example
+    For Critical alerts, call each contact up to two times before moving
+    to the next.
+
+7.  CONTACT HOURS
+
+-   Critical multi-site outages: 24x7 during term time.
+-   School workstation and classroom device issues: weekdays,
+    07:00-17:00.
+-   During school holidays, follow the holiday support calendar.
+
+5.  REMOTE ACTIONS
+
+-   Monitoring and read-only checks are permitted.
+-   Server changes require approval from IT Operations.
+-   Do not remotely restart classroom devices during teaching hours
+    without approval.
+
+6.  REBOOT APPROVAL
+
+-   Shared servers: approval required.
+-   Individual staff workstation: coordinate with the user and confirm
+    work is saved.
+-   Wait 30 minutes for a response to a non-critical approval request;
+    escalate Critical incidents immediately.
+
+7.  MAINTENANCE EXCEPTIONS
+
+-   Check the term/holiday maintenance calendar.
+-   Record the affected site, asset, approved window, and change
+    reference.
+-   Do not assume an entire site is under maintenance because one device
+    is listed.
+
+8.  TICKET NOTES Record site, asset, impact, tests, user coordination,
+    approval, and resolution. Avoid storing student personal information
+    in ticket notes.

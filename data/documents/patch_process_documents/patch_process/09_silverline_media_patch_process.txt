@@ -1,0 +1,37 @@
+CSOP - PP - PATCH PROCESS - SILVERLINE MEDIA Environment: LAB SAMPLE
+ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW This procedure defines patching and reboot schedules for
+Silverline Media. Production schedules, editing sessions, and rendering
+activity must be considered.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Monthly Day: Last Sunday of each month Time: 12:00 AM - 6:00 AM Pacific
+Time
+
+Patch Remediation Install approved patches during the maintenance
+window. Verify storage and media services after patching.
+
+Reboot Policy Shared storage and production servers require explicit
+approval before reboot. Do not reboot a server while an active
+production workflow depends on it unless the incident/change owner
+authorizes the action.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Sunday Time: 1:00 AM - 5:00 AM Pacific Time
+
+Reboot Policy Standard office workstations may be configured for
+automated reboot at 4:00 AM Sunday. Editing, rendering, and studio
+workstations must be coordinated with the assigned operator.
+
+PATCHING EXCEPTIONS Live Production and Rendering Devices registered for
+live production or long-running rendering jobs must not be rebooted
+until the production owner confirms a safe window. Record the exception
+owner and expiry.
+
+OPERATIONAL REQUIREMENTS 1. Check the production calendar and active
+workload. 2. Confirm device group and maintenance window. 3. Obtain
+approval for shared storage and production server reboots. 4. Verify
+patch completion and storage/service health. 5. Document failures and
+deferred devices. 6. Escalate through the Silverline Media Ticket
+Process.

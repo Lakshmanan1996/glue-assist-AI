@@ -1,0 +1,68 @@
+CUSTOMER SOP - NORTHSTAR MANUFACTURING Document: Datto RMM Alert and
+Ticket Process Environment: LAB SAMPLE ONLY - FICTIONAL CUSTOMER
+Version: 1.0
+
+1.  PURPOSE This procedure defines how the NOC handles monitoring alerts
+    and tickets for Northstar Manufacturing.
+
+2.  SEVERITY HANDLING Critical:
+
+-   Treat production server outages, site-wide network outages, and
+    manufacturing application outages as Critical.
+-   Start investigation immediately.
+-   If customer information is required, add a public note and set
+    status to “Info Needed by NOC”.
+-   If onsite intervention is required, add a public note and set status
+    to “Escalated to Customer”.
+-   Contact the customer escalation contacts in the order listed in
+    Section 3.
+
+High: - Investigate promptly during the authorized support period. -
+Record the alert evidence and troubleshooting performed. - If blocked by
+missing information, set status to “Info Needed by NOC”. - If physical
+intervention is required, set status to “Escalated to Customer”.
+
+3.  CRITICAL CONTACT ESCALATION Fictional contacts for lab use only:
+
+4.  Operations Desk - +1-555-0101 - ops@northstar.example
+
+5.  IT Manager - +1-555-0102 - itmanager@northstar.example
+
+6.  Duty Manager - +1-555-0103 - duty@northstar.example Call each
+    contact up to two times before moving to the next contact. Record
+    each attempt and outcome in the ticket.
+
+7.  CONTACT AVAILABILITY
+
+-   Critical production server or plant-wide outage: 24x7.
+-   Workstation issue: business hours only, unless it prevents a
+    production shift from operating.
+
+5.  REMOTE REMEDIATION
+
+-   Monitoring is permitted 24x7.
+-   Routine server remediation is permitted when the action is
+    reversible and documented.
+-   Do not change production control systems or manufacturing equipment
+    configuration without customer approval.
+-   Avoid disrupting active workstation sessions.
+
+6.  REBOOT APPROVAL
+
+-   Document the reason and expected impact in the ticket.
+-   Request customer approval before rebooting production servers.
+-   Wait up to 30 minutes for a response.
+-   If no response, follow the Critical Contact Escalation sequence. Do
+    not reboot solely because no one answered.
+
+7.  MAINTENANCE EXCEPTIONS
+
+-   Check the approved maintenance calendar before escalating an offline
+    alert.
+-   A maintenance exception must identify device, approved window,
+    approver, and expiry.
+-   If the exception has expired, handle the alert normally.
+
+8.  TICKET DOCUMENTATION Record alert time, affected asset, checks
+    performed, evidence, approvals, customer communications, escalation
+    attempts, actions, and final status.

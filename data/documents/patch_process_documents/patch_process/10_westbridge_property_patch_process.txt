@@ -1,0 +1,38 @@
+CSOP - PP - PATCH PROCESS - WESTBRIDGE PROPERTY GROUP Environment: LAB
+SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW These instructions define patching and reboot schedules for
+Westbridge Property Group offices and sites. Building operations and
+site-specific maintenance registers must be checked.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Monthly Day: Third Sunday of each month Time: 12:00 AM - 4:00 AM Local
+Site Time
+
+Patch Remediation Apply approved patches during the maintenance window.
+Confirm the site and time zone for each asset.
+
+Reboot Policy Standard IT infrastructure servers may be rebooted during
+the approved window when covered by the maintenance plan. Building
+access, CCTV, fire, lift, and life-safety systems are excluded from this
+general policy and must not be patched or rebooted by the NOC under this
+SOP.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Saturday Time: 11:00 PM - 4:00 AM Local Site Time
+
+Reboot Policy Standard office workstations may be configured for
+automated reboot at 3:00 AM Sunday. Reception and site operations
+workstations must be coordinated with the local site contact.
+
+PATCHING EXCEPTIONS Building and Life-Safety Systems These systems
+require a separate vendor/customer-approved maintenance procedure. A
+general IT maintenance window is not authorization to modify or reboot
+them.
+
+OPERATIONAL REQUIREMENTS 1. Confirm site, asset, and local time zone. 2.
+Check the site maintenance register. 3. Verify the device is not a
+building or life-safety system. 4. Patch within the approved window. 5.
+Reboot only under the applicable approval. 6. Verify patch results and
+service health. 7. Document failures and escalate through the Westbridge
+Ticket Process.

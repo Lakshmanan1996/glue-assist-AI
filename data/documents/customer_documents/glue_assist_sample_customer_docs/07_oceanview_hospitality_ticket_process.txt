@@ -1,0 +1,59 @@
+CUSTOMER SOP - OCEANVIEW HOSPITALITY Document: Property IT Monitoring
+and Ticket Process Environment: LAB SAMPLE ONLY - FICTIONAL CUSTOMER
+Version: 1.0
+
+1.  PURPOSE Covers NOC alerts for hotel property systems and central
+    services.
+
+2.  SEVERITY Critical:
+
+-   Property-wide network outage, reservation system unavailable, or
+    multiple guest-service systems affected.
+-   Contact the escalation chain immediately.
+-   If local power, cabling, or hardware intervention is needed, set
+    “Escalated to Customer”.
+
+High: - Single property server or shared service degradation. - Confirm
+whether guest services are affected. - If details are missing, set “Info
+Needed by NOC”.
+
+3.  CONTACTS Fictional lab contacts:
+
+4.  Property IT Desk - +1-555-0701 - itdesk@oceanview-hotel.example
+
+5.  Regional Technology Manager - +1-555-0702 -
+    regionaltech@oceanview-hotel.example
+
+6.  Corporate IT On-call - +1-555-0703 -
+    corporate-oncall@oceanview-hotel.example For Critical property
+    outages, call twice at each level. Record all attempts.
+
+7.  CONTACT HOURS
+
+-   Critical property and central-service outages: 24x7.
+-   Non-critical office workstation issues: weekdays, 09:00-17:00.
+-   Guest-facing impact should be stated clearly in the ticket.
+
+5.  REMOTE REMEDIATION
+
+-   Monitoring and read-only checks are permitted 24x7.
+-   Changes to reservation, access-control, or guest Wi-Fi platforms
+    require approval.
+-   Do not access guest personal information.
+
+6.  REBOOT
+
+-   Obtain property IT approval before restarting shared property
+    services.
+-   Confirm impact and any active events before rebooting.
+-   If approval is unavailable, escalate rather than reboot.
+
+7.  MAINTENANCE
+
+-   Check the property event calendar and approved maintenance window.
+-   Avoid planned disruption during major events unless specifically
+    approved.
+-   Record the property and time zone.
+
+8.  DOCUMENTATION Record property name, affected service, guest/business
+    impact, evidence, customer communication, approvals, and actions.

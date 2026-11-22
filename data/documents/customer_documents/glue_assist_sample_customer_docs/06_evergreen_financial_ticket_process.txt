@@ -1,0 +1,60 @@
+CUSTOMER SOP - EVERGREEN FINANCIAL Document: Infrastructure Alert
+Handling Environment: LAB SAMPLE ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+1.  PURPOSE Defines controlled NOC handling for financial-services
+    infrastructure alerts.
+
+2.  SEVERITY Critical:
+
+-   Core authentication, transaction-supporting infrastructure, or
+    primary site outage.
+-   Escalate immediately using Section 3.
+-   Preserve logs and do not perform unapproved changes.
+
+High: - Investigate and collect evidence. - Any action that changes
+production configuration requires an approved change or explicit
+incident authorization. - If blocked, set “Info Needed by NOC”.
+
+3.  ESCALATION CONTACTS Fictional lab contacts:
+
+4.  IT Operations Desk - +1-555-0601 - operations@evergreen-fin.example
+
+5.  Infrastructure Duty Manager - +1-555-0602 -
+    infra-duty@evergreen-fin.example
+
+6.  Incident Commander - +1-555-0603 - incident@evergreen-fin.example
+    For Critical alerts, call once, then send an approved notification;
+    repeat call once after five minutes if unanswered. Proceed to the
+    next contact after two unanswered attempts.
+
+7.  AVAILABILITY
+
+-   Critical infrastructure: 24x7.
+-   Standard user issues: weekdays, 08:00-18:00.
+-   Security incidents must follow the customer security incident
+    process.
+
+5.  REMOTE REMEDIATION
+
+-   Read-only diagnostics are permitted.
+-   Production changes require an approved change reference or explicit
+    incident commander authorization.
+-   Do not export financial or customer account data into the ticket.
+
+6.  REBOOT POLICY
+
+-   Production servers require explicit written approval and an approved
+    change/incident reference.
+-   No-response is not approval.
+-   Record the approver and reference before action.
+
+7.  MAINTENANCE
+
+-   Confirm the exact asset and approved change window.
+-   If an alert occurs outside the change scope, follow normal incident
+    handling.
+-   Record the change reference in the ticket.
+
+8.  AUDIT NOTES Record timestamps, evidence, authorization reference,
+    action taken, and outcome. Keep notes factual and do not include
+    sensitive account information.

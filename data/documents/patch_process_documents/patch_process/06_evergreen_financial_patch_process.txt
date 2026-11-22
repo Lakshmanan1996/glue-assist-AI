@@ -1,0 +1,37 @@
+CSOP - PP - PATCH PROCESS - EVERGREEN FINANCIAL Environment: LAB SAMPLE
+ONLY - FICTIONAL CUSTOMER Version: 1.0
+
+OVERVIEW This document defines patching and reboot controls for
+Evergreen Financial. All production patching must be linked to an
+approved change record.
+
+SERVER PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Monthly Day: Second Saturday of each month Time: 10:00 PM - 3:00 AM
+Eastern Time
+
+Patch Remediation Install only updates included in the approved change
+scope. Record patch identifiers, results, and any failed installations.
+
+Reboot Policy Production servers require explicit written approval and a
+valid change reference before reboot. No response or lack of objection
+must not be treated as approval.
+
+WORKSTATION PATCH MANAGEMENT POLICY Patch Maintenance Window Frequency:
+Weekly Day: Sunday Time: 12:00 AM - 4:00 AM Eastern Time
+
+Reboot Policy Standard workstations may be configured for automated
+reboot at 3:00 AM Sunday, subject to the approved endpoint policy.
+Privileged administrator workstations require coordination with the
+customer IT team.
+
+PATCHING EXCEPTIONS Transaction and Core Banking Systems These systems
+must not be patched or rebooted under the general schedule. A
+system-owner-approved change is required, including validation and
+rollback planning.
+
+OPERATIONAL REQUIREMENTS 1. Verify the approved change reference. 2.
+Confirm the assets and patch scope. 3. Obtain explicit reboot
+authorization. 4. Do not expand the change scope without approval. 5.
+Verify patch completion and service health. 6. Record evidence and
+approvals for audit. 7. Escalate failures using the Evergreen Financial
+Ticket Process.
