@@ -5,117 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glue Assist AI</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
-    <div class="app-container">
+<div class="app-container">
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="brand">
-                <div class="brand-icon">G</div>
-                <div>
-                    <h2>Glue Assist AI</h2>
-                    <span>MSP Knowledge Assistant</span>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">G</div>
+            <div>
+                <h2>Glue Assist AI</h2>
+                <span>MSP Knowledge Assistant</span>
+            </div>
+        </div>
+
+        <button class="new-chat-btn" id="newChatBtn">
+            + New Chat
+        </button>
+
+        <div class="sidebar-section">
+            <label>WORKSPACE</label>
+            <div class="workspace-info">
+                <span class="workspace-icon">✦</span>
+                <span>IT Glue Knowledge</span>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <label>RECENT CONVERSATIONS</label>
+            <div class="conversation-list" id="conversationList">
+                <div class="conversation-item">
+                    No conversations yet
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            <span>System ready</span>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h3>Knowledge Assistant</h3>
+                <span>Customer documentation and operational guidance</span>
+            </div>
+
+            <div class="user-profile" title="User profile">LA</div>
+        </header>
+
+        <!-- Chat Area -->
+        <section class="chat-container" id="chatContainer">
+
+            <div class="welcome-screen" id="welcomeScreen">
+
+                <div class="welcome-icon">✦</div>
+
+                <h1>How can I help you today?</h1>
+
+                <p>
+                    Ask questions about your MSP customers.
+                    Get guidance from IT Glue documentation,
+                    SOPs and operational procedures.
+                </p>
+
+                <div class="suggestion-grid">
+
+                    <button class="suggestion-card"
+                        data-question="What is the ticketing process of Spectrum?">
+                        <strong>Ticketing Process</strong>
+                        <span>Understand customer ticket workflows</span>
+                    </button>
+
+                    <button class="suggestion-card"
+                        data-question="What are the patch windows for Spectrum?">
+                        <strong>Patch Windows</strong>
+                        <span>Find customer patch schedules</span>
+                    </button>
+
+                    <button class="suggestion-card"
+                        data-question="What are the business calling hours for Spectrum?">
+                        <strong>Business Hours</strong>
+                        <span>Check customer calling windows</span>
+                    </button>
+
+                    <button class="suggestion-card"
+                        data-question="Which Spectrum servers should not be rebooted?">
+                        <strong>Server Information</strong>
+                        <span>Check important server restrictions</span>
+                    </button>
+
                 </div>
             </div>
 
-            <button class="new-chat-btn" id="newChatBtn">
-                + New Conversation
-            </button>
+        </section>
 
-            <div class="sidebar-section">
-                <label>SELECT CUSTOMER</label>
-                <select id="customerSelect">
-                    <option value="">Select a customer</option>
-                    <option value="westbridge_property">Westbridge Property</option>
-                    <option value="spectrum">Spectrum</option>
-                    <option value="hilson">Hilson Technologies</option>
-                </select>
-            </div>
+        <!-- Input Area -->
+        <footer class="chat-footer">
 
-            <div class="sidebar-section">
-                <label>RECENT CONVERSATIONS</label>
-                <div class="conversation-item">New conversation</div>
-            </div>
+            <form id="chatForm">
 
-            <div class="sidebar-footer">
-                <span class="status-dot"></span>
-                System ready
-            </div>
-        </aside>
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Ask about Spectrum, Hilson Technologies, or another customer..."
+                    autocomplete="off"
+                    required
+                >
 
-        <!-- Main Chat Area -->
-        <main class="main-content">
+                <button type="submit" id="sendBtn">
+                    Send
+                </button>
 
-            <header class="top-header">
-                <div>
-                    <h3>Knowledge Assistant</h3>
-                    <span>Ask questions about MSP documentation</span>
-                </div>
-                <div class="user-profile">LA</div>
-            </header>
+            </form>
 
-            <section class="chat-container" id="chatContainer">
+            <p>
+                Glue Assist AI provides advisory information based on
+                available customer documentation.
+            </p>
 
-                <div class="welcome-screen" id="welcomeScreen">
-                    <div class="welcome-icon">✦</div>
+        </footer>
 
-                    <h1>How can I help you today?</h1>
+    </main>
 
-                    <p>
-                        Get answers from customer-specific IT Glue
-                        documentation, SOPs and operational procedures.
-                    </p>
+</div>
 
-                    <div class="suggestion-grid">
-                        <button class="suggestion-card"
-                                data-question="What is the patch window?">
-                            <strong>Patch Windows</strong>
-                            <span>Find customer patch schedules</span>
-                        </button>
+<script src="/js/app.js"></script>
 
-                        <button class="suggestion-card"
-                                data-question="Explain the ticket escalation process">
-                            <strong>Ticket Process</strong>
-                            <span>Understand escalation procedures</span>
-                        </button>
-
-                        <button class="suggestion-card"
-                                data-question="What are the business calling hours?">
-                            <strong>Business Hours</strong>
-                            <span>Check customer calling windows</span>
-                        </button>
-
-                        <button class="suggestion-card"
-                                data-question="Which servers should not be rebooted?">
-                            <strong>Server Information</strong>
-                            <span>Check important server restrictions</span>
-                        </button>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- Message Input -->
-            <footer class="chat-footer">
-                <form id="chatForm">
-                    <input
-                        type="text"
-                        id="messageInput"
-                        placeholder="Select a customer and ask a question..."
-                        autocomplete="off"
-                    >
-                    <button type="submit" id="sendBtn">Send</button>
-                </form>
-
-                <p>Glue Assist AI provides advisory information based on available documentation.</p>
-            </footer>
-
-        </main>
-    </div>
-
-    <script src="js/app.js"></script>
 </body>
 </html>

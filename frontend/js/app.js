@@ -1,12 +1,21 @@
 
+// =====================================
+// GLUE ASSIST AI - FRONTEND APPLICATION
+// =====================================
+
 const chatForm = document.getElementById("chatForm");
 const messageInput = document.getElementById("messageInput");
 const chatContainer = document.getElementById("chatContainer");
-const customerSelect = document.getElementById("customerSelect");
 const welcomeScreen = document.getElementById("welcomeScreen");
 const newChatBtn = document.getElementById("newChatBtn");
+const sendBtn = document.getElementById("sendBtn");
 
-// Display a message in the chat window
+const API_URL = "/chat";
+
+// =====================================
+// DISPLAY CHAT MESSAGE
+// =====================================
+
 function displayMessage(message, sender) {
     const messageElement = document.createElement("div");
 
@@ -18,21 +27,21 @@ function displayMessage(message, sender) {
         messageElement.classList.add("ai-message");
     }
 
-    // Use textContent to safely display user input
+    // Safely display message content
     messageElement.textContent = message;
 
     chatContainer.appendChild(messageElement);
+
     chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    return messageElement;
 }
 
-// Send a user message
-function sendMessage(message) {
-    const selectedCustomer = customerSelect.value;
+// =====================================
+// SEND MESSAGE TO BACKEND
+// =====================================
 
-    if (!selectedCustomer) {
-        alert("Please select a customer first.");
-        return;
-    }
+async function sendMessage(message) {
 
     const question = message.trim();
 
@@ -40,50 +49,135 @@ function sendMessage(message) {
         return;
     }
 
-    // Hide the welcome screen
+    // Hide welcome screen
     if (welcomeScreen) {
         welcomeScreen.style.display = "none";
     }
 
-    // Display the customer question
+    // Display user question
     displayMessage(question, "user");
 
-    // Temporary response until backend integration
-    displayMessage(
-        "Your question has been received. Backend and AI integration is pending.",
+    // Clear input
+    messageInput.value = "";
+
+    // Prevent duplicate submissions
+    sendBtn.disabled = true;
+    messageInput.disabled = true;
+
+    // Display loading message
+    const loadingMessage = displayMessage(
+        "Glue Assist AI is processing your question...",
         "ai"
     );
 
-    messageInput.value = "";
-    messageInput.focus();
+    try {
+
+        // Send question to FastAPI
+        const response = await fetch(API_URL, {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                question: question
+            })
+        });
+
+        // Check HTTP response
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+
+            throw new Error(
+                errorData.detail || `Server error: ${response.status}`
+            );
+        }
+
+        // Read backend response
+        const data = await response.json();
+
+        // Remove loading message
+        loadingMessage.remove();
+
+        // Display AI response
+        displayMessage(
+            data.message || "The backend returned an empty response.",
+            "ai"
+        );
+
+    } catch (error) {
+
+        loadingMessage.remove();
+
+        console.error("Chat API Error:", error);
+
+        displayMessage(
+            "Unable to process your question. " + error.message,
+            "ai"
+        );
+
+    } finally {
+
+        // Re-enable input
+        sendBtn.disabled = false;
+        messageInput.disabled = false;
+
+        messageInput.focus();
+    }
 }
 
-// Handle form submission
+// =====================================
+// CHAT FORM SUBMISSION
+// =====================================
+
 chatForm.addEventListener("submit", function(event) {
+
     event.preventDefault();
 
     sendMessage(messageInput.value);
+
 });
 
-// Handle suggested questions
+// =====================================
+// SUGGESTED QUESTIONS
+// =====================================
+
 document.querySelectorAll(".suggestion-card").forEach(function(card) {
+
     card.addEventListener("click", function() {
+
         const question = card.dataset.question;
 
         sendMessage(question);
+
     });
+
 });
 
-// Start a new conversation
+// =====================================
+// NEW CHAT
+// =====================================
+
 newChatBtn.addEventListener("click", function() {
+
+    // Remove previous messages
     chatContainer.querySelectorAll(".message").forEach(function(message) {
         message.remove();
     });
 
+    // Show welcome screen
     if (welcomeScreen) {
         welcomeScreen.style.display = "block";
     }
 
+    // Clear input
     messageInput.value = "";
+
+    messageInput.disabled = false;
+    sendBtn.disabled = false;
+
     messageInput.focus();
+
 });
+
