@@ -1,0 +1,51 @@
+from qdrant_client import models
+
+from backend.app.rag.vector_store import open_vector_store
+
+
+def retrieve_relevant_chunks(
+    question: str,
+    customer_id: str,
+    document_type: str = None,
+    limit: int = 5
+):
+    """
+    Retrieve relevant document chunks for a customer.
+    """
+
+    if not question.strip():
+        raise ValueError("Question cannot be empty.")
+
+    if not customer_id.strip():
+        raise ValueError("Customer ID cannot be empty.")
+
+    conditions = [
+        models.FieldCondition(
+            key="metadata.customer_id",
+            match=models.MatchValue(value=customer_id)
+        )
+    ]
+
+    if document_type:
+        conditions.append(
+            models.FieldCondition(
+                key="metadata.document_type",
+                match=models.MatchValue(value=document_type)
+            )
+        )
+
+    query_filter = models.Filter(must=conditions)
+
+    vector_store, client = open_vector_store()
+
+    try:
+        results = vector_store.similarity_search(
+            query=question,
+            k=limit,
+            filter=query_filter
+        )
+
+        return results
+
+    finally:
+        client.close()

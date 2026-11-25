@@ -9,14 +9,29 @@ const chatContainer = document.getElementById("chatContainer");
 const welcomeScreen = document.getElementById("welcomeScreen");
 const newChatBtn = document.getElementById("newChatBtn");
 const sendBtn = document.getElementById("sendBtn");
+const customerSelect = document.getElementById("customerSelect");
 
 const API_URL = "/chat";
+
+// =====================================
+// CUSTOMER SELECTION
+// =====================================
+
+function getSelectedCustomer() {
+    return {
+        id: customerSelect.value,
+        name: customerSelect.options[
+            customerSelect.selectedIndex
+        ].text
+    };
+}
 
 // =====================================
 // DISPLAY CHAT MESSAGE
 // =====================================
 
 function displayMessage(message, sender) {
+
     const messageElement = document.createElement("div");
 
     messageElement.classList.add("message");
@@ -27,7 +42,6 @@ function displayMessage(message, sender) {
         messageElement.classList.add("ai-message");
     }
 
-    // Safely display message content
     messageElement.textContent = message;
 
     chatContainer.appendChild(messageElement);
@@ -41,30 +55,33 @@ function displayMessage(message, sender) {
 // SEND MESSAGE TO BACKEND
 // =====================================
 
-async function sendMessage(message) {
+async function sendMessage(message, documentType=null) {
 
     const question = message.trim();
+    const customer = getSelectedCustomer();
+
+    if (!customer.id) {
+        alert("Please select a customer before asking a question.");
+        customerSelect.focus();
+        return;
+    }
 
     if (!question) {
         return;
     }
 
-    // Hide welcome screen
     if (welcomeScreen) {
         welcomeScreen.style.display = "none";
     }
 
-    // Display user question
     displayMessage(question, "user");
 
-    // Clear input
     messageInput.value = "";
 
-    // Prevent duplicate submissions
     sendBtn.disabled = true;
     messageInput.disabled = true;
+    customerSelect.disabled = true;
 
-    // Display loading message
     const loadingMessage = displayMessage(
         "Glue Assist AI is processing your question...",
         "ai"
@@ -72,8 +89,8 @@ async function sendMessage(message) {
 
     try {
 
-        // Send question to FastAPI
         const response = await fetch(API_URL, {
+
             method: "POST",
 
             headers: {
@@ -81,26 +98,28 @@ async function sendMessage(message) {
             },
 
             body: JSON.stringify({
-                question: question
+                question: question,
+                customer_id: customer.id,
+                document_type: documentType
+
             })
+
         });
 
-        // Check HTTP response
         if (!response.ok) {
+
             const errorData = await response.json().catch(() => ({}));
 
             throw new Error(
                 errorData.detail || `Server error: ${response.status}`
             );
+
         }
 
-        // Read backend response
         const data = await response.json();
 
-        // Remove loading message
         loadingMessage.remove();
 
-        // Display AI response
         displayMessage(
             data.message || "The backend returned an empty response.",
             "ai"
@@ -119,12 +138,14 @@ async function sendMessage(message) {
 
     } finally {
 
-        // Re-enable input
         sendBtn.disabled = false;
         messageInput.disabled = false;
+        customerSelect.disabled = false;
 
         messageInput.focus();
+
     }
+
 }
 
 // =====================================
@@ -140,20 +161,92 @@ chatForm.addEventListener("submit", function(event) {
 });
 
 // =====================================
-// SUGGESTED QUESTIONS
+// KNOWLEDGE CARDS
 // =====================================
 
 document.querySelectorAll(".suggestion-card").forEach(function(card) {
 
     card.addEventListener("click", function() {
 
-        const question = card.dataset.question;
+        const customer = getSelectedCustomer();
 
-        sendMessage(question);
+        if (!customer.id) {
+            alert("Please select a customer first.");
+            customerSelect.focus();
+            return;
+        }
+
+        const topic = card.dataset.topic;
+
+        let question = "";
+
+	let documentType= null;
+
+        if (topic === "ticketing") {
+		question = `What is the ticketing process for ${customer.name}?`;
+
+		documentType = "ticket_process";
+
+        } else if (topic === "patch") {
+
+		question = `What is the patch process and patch window for ${customer.name}?`;
+
+		documentType = "patch_process";
+        }
+
+        if (question) {
+
+		sendMessage(question, documentType);
+
+	}
 
     });
 
 });
+
+// =====================================
+// CUSTOMER CHANGE
+// =====================================
+
+customerSelect.addEventListener("change", function() {
+
+    const existingMessages = chatContainer.querySelectorAll(".message");
+
+    if (existingMessages.length > 0) {
+
+        resetChat();
+
+        displayMessage(
+            "Customer changed to " + getSelectedCustomer().name +
+            ". A new conversation has started.",
+            "ai"
+        );
+
+    }
+
+});
+
+// =====================================
+// RESET CHAT
+// =====================================
+
+function resetChat() {
+
+    chatContainer.querySelectorAll(".message").forEach(function(message) {
+        message.remove();
+    });
+
+    if (welcomeScreen) {
+        welcomeScreen.style.display = "block";
+    }
+
+    messageInput.value = "";
+
+    messageInput.disabled = false;
+    sendBtn.disabled = false;
+    customerSelect.disabled = false;
+
+}
 
 // =====================================
 // NEW CHAT
@@ -161,21 +254,7 @@ document.querySelectorAll(".suggestion-card").forEach(function(card) {
 
 newChatBtn.addEventListener("click", function() {
 
-    // Remove previous messages
-    chatContainer.querySelectorAll(".message").forEach(function(message) {
-        message.remove();
-    });
-
-    // Show welcome screen
-    if (welcomeScreen) {
-        welcomeScreen.style.display = "block";
-    }
-
-    // Clear input
-    messageInput.value = "";
-
-    messageInput.disabled = false;
-    sendBtn.disabled = false;
+    resetChat();
 
     messageInput.focus();
 

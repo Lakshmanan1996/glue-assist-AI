@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,6 @@
 
 <div class="app-container">
 
-    <!-- Sidebar -->
     <aside class="sidebar">
 
         <div class="brand">
@@ -30,7 +28,7 @@
             <label>WORKSPACE</label>
             <div class="workspace-info">
                 <span class="workspace-icon">✦</span>
-                <span>IT Glue Knowledge</span>
+                <span>Knowledge Workspace</span>
             </div>
         </div>
 
@@ -50,19 +48,41 @@
 
     </aside>
 
-    <!-- Main Content -->
     <main class="main-content">
 
         <header class="top-header">
+
             <div>
                 <h3>Knowledge Assistant</h3>
                 <span>Customer documentation and operational guidance</span>
             </div>
 
-            <div class="user-profile" title="User profile">LA</div>
+            <div class="header-actions">
+
+                <div class="customer-selector">
+                    <label for="customerSelect">CUSTOMER</label>
+
+                    <select id="customerSelect" required>
+                        <option value="">Select a customer</option>
+                        <option value="northstar_manufacturing">Northstar Manufacturing</option>
+                        <option value="bluepeak_healthcare">Bluepeak Healthcare</option>
+                        <option value="summit_education">Summit Education</option>
+                        <option value="redwood_legal">Redwood Legal</option>
+                        <option value="cedar_retail">Cedar Retail</option>
+                        <option value="evergreen_financial">Evergreen Financial</option>
+                        <option value="oceanview_hospitality">Oceanview Hospitality</option>
+                        <option value="pioneer_logistics">Pioneer Logistics</option>
+                        <option value="silverline_media">Silverline Media</option>
+                        <option value="westbridge_property">Westbridge Property</option>
+                    </select>
+                </div>
+
+                <div class="user-profile" title="User profile">LA</div>
+
+            </div>
+
         </header>
 
-        <!-- Chat Area -->
         <section class="chat-container" id="chatContainer">
 
             <div class="welcome-screen" id="welcomeScreen">
@@ -72,43 +92,39 @@
                 <h1>How can I help you today?</h1>
 
                 <p>
-                    Ask questions about your MSP customers.
-                    Get guidance from IT Glue documentation,
-                    SOPs and operational procedures.
+                    Select your customer and ask questions about ticketing,
+                    patch procedures and operational knowledge.
+                    Get answers based on available customer documentation.
                 </p>
 
                 <div class="suggestion-grid">
 
-                    <button class="suggestion-card"
-                        data-question="What is the ticketing process of Spectrum?">
+                    <button type="button"
+                        class="suggestion-card"
+                        data-topic="ticketing">
+
+                        <div class="card-icon">▤</div>
                         <strong>Ticketing Process</strong>
-                        <span>Understand customer ticket workflows</span>
+                        <span>Understand customer ticket workflows and escalation procedures.</span>
+
                     </button>
 
-                    <button class="suggestion-card"
-                        data-question="What are the patch windows for Spectrum?">
-                        <strong>Patch Windows</strong>
-                        <span>Find customer patch schedules</span>
-                    </button>
+                    <button type="button"
+                        class="suggestion-card"
+                        data-topic="patch">
 
-                    <button class="suggestion-card"
-                        data-question="What are the business calling hours for Spectrum?">
-                        <strong>Business Hours</strong>
-                        <span>Check customer calling windows</span>
-                    </button>
+                        <div class="card-icon">◷</div>
+                        <strong>Patch Process</strong>
+                        <span>Find customer patch schedules and maintenance procedures.</span>
 
-                    <button class="suggestion-card"
-                        data-question="Which Spectrum servers should not be rebooted?">
-                        <strong>Server Information</strong>
-                        <span>Check important server restrictions</span>
                     </button>
 
                 </div>
+
             </div>
 
         </section>
 
-        <!-- Input Area -->
         <footer class="chat-footer">
 
             <form id="chatForm">
@@ -116,7 +132,7 @@
                 <input
                     type="text"
                     id="messageInput"
-                    placeholder="Ask about Spectrum, Hilson Technologies, or another customer..."
+                    placeholder="Select a customer and ask your question..."
                     autocomplete="off"
                     required
                 >

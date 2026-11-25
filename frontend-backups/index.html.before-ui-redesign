@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glue Assist AI</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">G</div>
+            <div>
+                <h2>Glue Assist AI</h2>
+                <span>MSP Knowledge Assistant</span>
+            </div>
+        </div>
+
+        <button class="new-chat-btn" id="newChatBtn">
+            + New Chat
+        </button>
+
+        <div class="sidebar-section">
+            <label>WORKSPACE</label>
+            <div class="workspace-info">
+                <span class="workspace-icon">✦</span>
+                <span>IT Glue Knowledge</span>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <label>RECENT CONVERSATIONS</label>
+            <div class="conversation-list" id="conversationList">
+                <div class="conversation-item">
+                    No conversations yet
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            <span>System ready</span>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-header">
+
+            <div>
+                <h3>Knowledge Assistant</h3>
+                <span>Customer documentation and operational guidance</span>
+            </div>
+
+            <div class="header-actions">
+
+                <div class="customer-selector">
+                    <label for="customerSelect">CUSTOMER</label>
+
+                    <select id="customerSelect" required>
+                        <option value="">Select a customer</option>
+                        <option value="northstar_manufacturing">Northstar Manufacturing</option>
+                        <option value="bluepeak_healthcare">Bluepeak Healthcare</option>
+                        <option value="summit_education">Summit Education</option>
+                        <option value="redwood_legal">Redwood Legal</option>
+                        <option value="cedar_retail">Cedar Retail</option>
+                        <option value="evergreen_financial">Evergreen Financial</option>
+                        <option value="oceanview_hospitality">Oceanview Hospitality</option>
+                        <option value="pioneer_logistics">Pioneer Logistics</option>
+                        <option value="silverline_media">Silverline Media</option>
+                        <option value="westbridge_property">Westbridge Property</option>
+                    </select>
+                </div>
+
+                <div class="user-profile" title="User profile">LA</div>
+
+            </div>
+
+        </header>
+
+        <section class="chat-container" id="chatContainer">
+
+            <div class="welcome-screen" id="welcomeScreen">
+
+                <div class="welcome-icon">✦</div>
+
+                <h1>How can I help you today?</h1>
+
+                <p>
+                    Select your customer and ask questions about ticketing,
+                    patch procedures and operational knowledge.
+                    Get answers based on available customer documentation.
+                </p>
+
+                <div class="suggestion-grid">
+
+                    <button type="button"
+                        class="suggestion-card"
+                        data-topic="ticketing">
+
+                        <div class="card-icon">▤</div>
+                        <strong>Ticketing Process</strong>
+                        <span>Understand customer ticket workflows and escalation procedures.</span>
+
+                    </button>
+
+                    <button type="button"
+                        class="suggestion-card"
+                        data-topic="patch">
+
+                        <div class="card-icon">◷</div>
+                        <strong>Patch Process</strong>
+                        <span>Find customer patch schedules and maintenance procedures.</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="chat-footer">
+
+            <form id="chatForm">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Select a customer and ask your question..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" id="sendBtn">
+                    Send
+                </button>
+
+            </form>
+
+            <p>
+                Glue Assist AI provides advisory information based on
+                available customer documentation.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

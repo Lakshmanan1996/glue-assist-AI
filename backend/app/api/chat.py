@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request
 
 from backend.app.models.chat import ChatRequest, ChatResponse
-
+from backend.app.rag.retriever import retrieve_relevant_chunks
 from backend.app.services.claude_service import generate_claude_response
 
 router = APIRouter()
@@ -9,11 +9,24 @@ router = APIRouter()
 
 @router.post("/chat", response_model=ChatResponse)
 async def chat(request: Request, chat_request: ChatRequest):
+
     claude_client = request.app.state.claude_client
 
+    retrieved_docs = retrieve_relevant_chunks(
+        question=chat_request.question,
+        customer_id=chat_request.customer_id,
+        document_type=chat_request.document_type,
+        limit=5
+    )
+
+    context = "\n\n".join(
+        doc.page_content for doc in retrieved_docs
+    )
+
     answer = await generate_claude_response(
-            client=claude_client,
-            question=chat_request.question
+        client=claude_client,
+        question=chat_request.question,
+        context=context
     )
 
     return ChatResponse(
